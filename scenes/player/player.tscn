@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://458owokd6cff"]
+
+[ext_resource type="Texture2D" uid="uid://6170sghrk4yl" path="res://assets/sprites/characters/player/PixelArtCharacterGenerator_v2_2_Anim-Sheet.png" id="1_xlegd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x8er"]
+atlas = ExtResource("1_xlegd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac3dm"]
+atlas = ExtResource("1_xlegd")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4t4xh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0x8er")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac3dm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ewoln"]
+radius = 16.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_4t4xh")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.49094
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -21)
+shape = SubResource("CircleShape2D_ewoln")
