@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://458owokd6cff"]
+[gd_scene load_steps=7 format=3 uid="uid://458owokd6cff"]
 
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_lreja"]
 [ext_resource type="Texture2D" uid="uid://6170sghrk4yl" path="res://assets/sprites/characters/player/PixelArtCharacterGenerator_v2_2_Anim-Sheet.png" id="1_xlegd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0x8er"]
@@ -25,17 +26,18 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ewoln"]
-radius = 16.0
+radius = 15.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_lreja")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_4t4xh")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.49094
+frame_progress = 0.652068
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -21)
+position = Vector2(1, -20)
 shape = SubResource("CircleShape2D_ewoln")
