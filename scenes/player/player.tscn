@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://458owokd6cff"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_lreja"]
+[ext_resource type="Script" uid="uid://b5gm87jml4rtw" path="res://scripts/player/player.gd" id="1_lreja"]
 [ext_resource type="Texture2D" uid="uid://6170sghrk4yl" path="res://assets/sprites/characters/player/PixelArtCharacterGenerator_v2_2_Anim-Sheet.png" id="1_xlegd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0x8er"]
