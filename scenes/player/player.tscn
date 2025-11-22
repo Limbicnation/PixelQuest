@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://458owokd6cff"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_lreja"]
+[ext_resource type="Script" uid="uid://b2sk6ix3qyp8y" path="res://scripts/player/player.gd" id="1_lreja"]
 [ext_resource type="Texture2D" uid="uid://6170sghrk4yl" path="res://assets/sprites/characters/player/PixelArtCharacterGenerator_v2_2_Anim-Sheet.png" id="1_xlegd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0x8er"]
@@ -41,3 +41,7 @@ frame_progress = 0.652068
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -20)
 shape = SubResource("CircleShape2D_ewoln")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
