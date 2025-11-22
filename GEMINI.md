@@ -38,5 +38,10 @@ This project is designed to be opened and run within the Godot Editor.
 2.  **Run**: Press F5 (or the Play button) to run the main scene (`Level1.tscn`).
 
 ## Current Status
-- Basic player movement (gravity, jumping, horizontal movement) is implemented in `scripts/player/player.gd`.
-- A `Level1` scene exists as the starting point.
+- **Player**:
+    - Basic movement (gravity, jumping, horizontal movement) implemented in `scripts/player/player.gd`.
+    - Input: WASD and Arrow keys supported via custom Input Map (`jump`, `move_left`, `move_right`).
+    - Sprite direction flipping implemented.
+    - `Camera2D` integrated directly into the player scene for smooth following.
+- **Scenes**:
+    - `Level1` scene exists as the starting point (static camera removed in favor of player camera).
