@@ -40,6 +40,7 @@ This project is designed to be opened and run within the Godot Editor.
 ## Current Status
 - **Player**:
     - Basic movement (gravity, jumping, horizontal movement) implemented in `scripts/player/player.gd`.
+    - Input: WASD and Arrow keys supported via custom Input Map (`jump`, `move_left`, `move_right`).
     - Sprite direction flipping implemented.
     - `Camera2D` integrated directly into the player scene for smooth following.
 - **Scenes**:
