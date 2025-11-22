@@ -20,3 +20,14 @@ To create a standalone executable (e.g., for Linux, Windows, or Web):
 3.  **Export**: Click **Export Project**, choose a destination folder (e.g., `builds/`), and save.
 
 **Note**: The `export_presets.cfg` file is not currently tracked. You will need to create your own presets locally.
+
+## Troubleshooting
+
+### Linux (X11) Errors
+If you encounter **`BadWindow`** errors or crashes with messages like *"Attempting to make child window exclusive"*:
+1.  In the Godot Editor, go to **Editor > Editor Settings**.
+2.  Navigate to **Interface > Editor**.
+3.  Enable **Single Window Mode**.
+4.  Restart the Editor.
+
+This forces all floating windows (popups, tooltips) to be embedded within the main editor window, resolving most X11 window management conflicts.
