@@ -27,6 +27,7 @@ mono_crash.*.json
 # Editor/IDE specific
 .vscode/
 .idea/
+todo.txt
 *.swp
 *.swo
 *.tmp
