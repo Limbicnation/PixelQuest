@@ -13,3 +13,27 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Export artifacts
+*.pck
+*.zip
+*.exe
+*.a
+*.so
+*.dylib
+*.apk
+*.aab
+
+# Editor/IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+*~
+.DS_Store
+Thumbs.db
+
+# Local builds
+builds/
+bin/
