@@ -22,14 +22,17 @@ func _ready() -> void:
 	var idle_state = load("res://src/actors/player_states/idle.gd").new()
 	idle_state.name = "Idle"
 	state_machine.add_child(idle_state)
+	idle_state.owner = self
 	
 	var run_state = load("res://src/actors/player_states/run.gd").new()
 	run_state.name = "Run"
 	state_machine.add_child(run_state)
+	run_state.owner = self
 	
 	var air_state = load("res://src/actors/player_states/air.gd").new()
 	air_state.name = "Air"
 	state_machine.add_child(air_state)
+	air_state.owner = self
 	
 	state_machine.initial_state = idle_state
 	# Trigger manual ready if needed, but add_child handles it.
