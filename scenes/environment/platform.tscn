@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8j2k3l4m5n6o"]
+
+[ext_resource type="Texture2D" uid="uid://bcnt06n82sd5a" path="res://assets/ground_element/A_pixel_art_platform...-148693986-3.png" id="1_ground"]
+
+[node name="Platform" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 3
+position = Vector2(1, -17)
+scale = Vector2(4.5, 2.53125)
+texture = ExtResource("1_ground")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(11, 11, 50, 5, 128, 7, 220, 41, 290, 41, 287, 64, -288, 63, -288, -17, -139, -10, -110, 9, -89, 11, -59, 0, -25, 3, 10, 8)

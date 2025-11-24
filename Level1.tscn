@@ -1,23 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpk8hqijlflgx"]
 
 [ext_resource type="PackedScene" uid="uid://458owokd6cff" path="res://scenes/player/player.tscn" id="1_agunu"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kyxg0"]
-load_path = "res://.godot/imported/A_pixel_art_platform...-148693986-3.png-3f0fee2bcad85f240ec2d10ba38fc3cd.ctex"
+[ext_resource type="PackedScene" uid="uid://b8j2k3l4m5n6o" path="res://scenes/environment/platform.tscn" id="2_platform"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_agunu")]
 position = Vector2(-2, 32)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Platform1" parent="." instance=ExtResource("2_platform")]
 position = Vector2(0, 32)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-texture_repeat = 3
-position = Vector2(1, -17)
-scale = Vector2(4.5, 2.53125)
-texture = SubResource("CompressedTexture2D_kyxg0")
+[node name="Platform2" parent="." instance=ExtResource("2_platform")]
+position = Vector2(600, -20)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(11, 11, 50, 5, 128, 7, 220, 41, 290, 41, 287, 64, -288, 63, -288, -17, -139, -10, -110, 9, -89, 11, -59, 0, -25, 3, 10, 8)
+[node name="Platform3" parent="." instance=ExtResource("2_platform")]
+position = Vector2(-600, -20)
