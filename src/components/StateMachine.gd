@@ -7,10 +7,6 @@ var current_state: State
 var states: Dictionary = {}
 
 func _ready() -> void:
-	# Wait for parent to be ready to ensure safe access to shared data
-	if get_parent() and not get_parent().is_node_ready():
-		await get_parent().ready
-
 	for child in get_children():
 		if child is State:
 			states[child.name.to_lower()] = child
