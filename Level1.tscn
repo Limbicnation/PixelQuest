@@ -21,7 +21,7 @@ texture = ExtResource("2_ground")
 polygon = PackedVector2Array(11, 11, 50, 5, 128, 7, 220, 41, 290, 41, 287, 64, -288, 63, -288, -17, -139, -10, -110, 9, -89, 11, -59, 0, -25, 3, 10, 8)
 
 [node name="Platform2" type="StaticBody2D" parent="."]
-position = Vector2(600, -80)
+position = Vector2(600, -20)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform2"]
 texture_repeat = 3
@@ -33,7 +33,7 @@ texture = ExtResource("2_ground")
 polygon = PackedVector2Array(11, 11, 50, 5, 128, 7, 220, 41, 290, 41, 287, 64, -288, 63, -288, -17, -139, -10, -110, 9, -89, 11, -59, 0, -25, 3, 10, 8)
 
 [node name="Platform3" type="StaticBody2D" parent="."]
-position = Vector2(-600, -80)
+position = Vector2(-600, -20)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform3"]
 texture_repeat = 3
