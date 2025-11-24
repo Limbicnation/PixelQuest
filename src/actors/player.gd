@@ -12,7 +12,6 @@ var jump_buffer_timer: float = 0.0
 var state_machine: StateMachine
 
 func _ready() -> void:
-	print("DEBUG: Player _ready started")
 	# Initialize State Machine dynamically
 	state_machine = StateMachine.new()
 	state_machine.name = "StateMachine"
