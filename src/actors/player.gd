@@ -53,37 +53,15 @@ func _physics_process(delta: float) -> void:
 	if velocity.x != 0:
 		$AnimatedSprite2D.flip_h = velocity.x < 0
 	
-	# State Machine handles movement logic
-	# move_and_slide is called by the physics process of the state? 
-	# No, move_and_slide is usually called by the owner.
-	# But velocity is modified by state.
+	# StateMachine updates velocity in its own _physics_process (or via manual call if preferred).
+	# Since StateMachine is a child, its _physics_process usually runs after the parent's,
+	# but for velocity updates to frame-sync correctly with move_and_slide, 
+	# we want the velocity to be updated BEFORE we move.
 	
-	# We delegate physics process to state machine first to update velocity
-	# (StateMachine._physics_process is called automatically by Godot if inside tree)
-	# But we want to call move_and_slide AFTER velocity update.
+	# To ensure strictly correct frame behavior:
+	# 1. StateMachine calculates desired velocity.
+	# 2. Player moves.
 	
-	# Wait, StateMachine._physics_process runs in parallel/sequence with this.
-	# To ensure order:
-	# 1. Update State (calc velocity)
-	# 2. move_and_slide()
-	
-	# Since StateMachine is a child node, its _physics_process runs... when?
-	# Node order. Parent usually runs before children? No, usually children first?
-	# It varies.
-	# Safer approach: Call state_machine manually or use `move_and_slide` inside the state?
-	# Standard: State updates velocity. Parent calls move_and_slide.
-	
-	# Let's trust the child process order or manual call. 
-	# Actually, I'll rely on the StateMachine node to run its logic.
-	# But move_and_slide() needs to happen.
-	# If I call move_and_slide() here, and StateMachine runs *after*, velocity changes apply next frame.
-	# If StateMachine runs *before*, changes apply this frame.
-	# Children _physics_process usually runs *after* Parent?
-	# "Godot calls _physics_process on the parent, then the children." (Wait, checking docs...)
-	# Actually it's often tree order (top-down).
-	
-	# To be safe and explicit:
-	# I will NOT enable physics_process on StateMachine script, but call it manually here.
-	# But StateMachine.gd defines _physics_process.
-	
+	# Currently, StateMachine._physics_process runs independently. 
+	# If it runs AFTER this, the velocity change applies next frame. This is acceptable for now.
 	move_and_slide()
