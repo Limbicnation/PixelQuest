@@ -15,27 +15,27 @@ func _ready() -> void:
 	# Initialize State Machine dynamically
 	state_machine = StateMachine.new()
 	state_machine.name = "StateMachine"
-	add_child(state_machine)
-	# Owner must be set for persistence if saved, but mostly for 'await owner.ready' in scripts
-	state_machine.owner = self 
 	
+	# Create States
 	var idle_state = load("res://src/actors/player_states/idle.gd").new()
 	idle_state.name = "Idle"
+	idle_state.player = self # Explicit injection
 	state_machine.add_child(idle_state)
-	idle_state.owner = self
 	
 	var run_state = load("res://src/actors/player_states/run.gd").new()
 	run_state.name = "Run"
+	run_state.player = self # Explicit injection
 	state_machine.add_child(run_state)
-	run_state.owner = self
 	
 	var air_state = load("res://src/actors/player_states/air.gd").new()
 	air_state.name = "Air"
+	air_state.player = self # Explicit injection
 	state_machine.add_child(air_state)
-	air_state.owner = self
 	
 	state_machine.initial_state = idle_state
-	# Trigger manual ready if needed, but add_child handles it.
+	
+	# Add to tree LAST - this triggers _ready() on SM and States
+	add_child(state_machine)
 
 func _physics_process(delta: float) -> void:
 	# Global Input Buffers
